@@ -11,16 +11,17 @@
 %% API.
 
 start(_Type, _Args) ->
-	Dispatch = [
+    Dispatch = [
 		{'_', [
-			{[], toppage_handler, []}
-		]}
-	],
-	{ok, _} = cowboy:start_listener(http, 100,
-		cowboy_tcp_transport, [{port, 8080}],
-		cowboy_http_protocol, [{dispatch, Dispatch}]
-	),
-	hello_world_sup:start_link().
+		       {[], toppage_handler, []}
+		      ]}
+	       ],
+    Port = list_to_integer(os:getenv("PORT")),
+    {ok, _} = cowboy:start_listener(http, 100,
+				    cowboy_tcp_transport, [{port, Port}],
+				    cowboy_http_protocol, [{dispatch, Dispatch}]
+				   ),
+    hello_world_sup:start_link().
 
 stop(_State) ->
-	ok.
+    ok.

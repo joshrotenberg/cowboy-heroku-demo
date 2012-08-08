@@ -13,7 +13,8 @@
 start(_Type, _Args) ->
     Dispatch = [
 		{'_', [
-		       {[], toppage_handler, []}
+		       {[<<"stuff">>], stuff_handler, []},
+		       {[], default_handler, []}		       
 		      ]}
 	       ],
     Port = list_to_integer(os:getenv("PORT")),

@@ -18,5 +18,3 @@ distclean: clean
 doc:
 	@./rebar doc skip_deps=true
 
-dev:
-	@erl -pa ebin/ -pa deps/*/ebin

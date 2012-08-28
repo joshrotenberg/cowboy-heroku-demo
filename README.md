@@ -1,16 +1,12 @@
-Cowboy Hello World
-==================
+Cowboy Hello World on Heroku
+============================
 
-To compile this example you need rebar in your PATH.
+Super simple Hello World Cowboy app suitable for running on Heroku:
 
-Type the following command:
 ```
-$ rebar get-deps compile
-```
-
-You can then start the Erlang node with the following command:
-```
-./start.sh
+heroku create my-cowboy-heroku-demo -s cedar
+heroku config:add BUILDPACK_URL=http://github.com/heroku/heroku-buildpack-erlang.git
+git push heroku master
 ```
 
-Then point your browser to the indicated URL.
+See https://github.com/extend/cowboy for more on Cowboy.

@@ -11,7 +11,7 @@ init(_Transport, Req, []) ->
 	{ok, Req, undefined}.
 
 handle(Req, State) ->
-    {ok, Content} = main_dtl:render([{content, "foo"}]),
+    {ok, Content} = main_dtl:render([{content, "default"}]),
     {ok, Req2} = cowboy_http_req:reply(200, [], Content, Req),
     {ok, Req2, State}.
 

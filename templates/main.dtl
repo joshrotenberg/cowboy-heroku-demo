@@ -3,6 +3,6 @@
     <title> cowboy on heroku! </title>
   </head>
   <body>
-    {{ content }}
+    this is the {{ content }} handler.
   </body>
 </html>
